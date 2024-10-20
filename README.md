@@ -20,7 +20,61 @@ Our project leverages the power of IBM zSystems, incorporating key technologies 
 This framework ensures equitable access to essential goods, reduces disruptions, and builds long-term resilience
 
 
-Solution - The Python code I created implements a machine learning pipeline to analyze the FAO food price index data and predict supply chain disruptions. It starts by loading and cleaning the dataset, ensuring that the 'value' column is present and creating additional features such as a standardized value and a binary indicator for recent years. Data visualization is included to better understand the data through correlation heatmaps and distribution plots. I then set up a dummy target variable for supply chain disruption and split the dataset into training and testing sets. I trained various machine learning models, including XGBoost, Logistic Regression, Random Forest, and SVM, and compared their performance using classification reports, confusion matrices, and cross-validation scores. I also performed hyperparameter tuning for the XGBoost model to enhance its performance. Additionally, I implemented an ensemble model that combines multiple classifiers for improved accuracy. To evaluate the models further, I included ROC curve analysis to visualize their performance metrics. Overall, this code showcases effective feature engineering, model comparison, and evaluation techniques, providing a strong framework for addressing supply chain disruptions and analyzing food security issues.
+Solution - 
+1. Data Loading and Cleaning
+Explanation: The first step involves loading FAO Food Price Index data using pandas and ensuring that the critical 'value' column is present. This is where we check for missing or corrupted data and ensure that all relevant features, such as the year and value, are in the correct format for analysis.
+IBM zLinux One: This is where IBM zLinux One’s robust processing power comes in handy. The platform efficiently handles large datasets, ensuring quick loading and cleaning without latency issues.
+Output Example: A cleaned dataset ready for further processing.
+2. Data Visualization
+Explanation: We use data visualization techniques like correlation heatmaps and distribution plots to better understand the relationships between variables. This helps identify patterns or anomalies in food prices, which could be early indicators of supply chain disruptions.
+IBM Packages: Utilizing Matplotlib and Seaborn libraries, this visualization step takes advantage of Watson Studio's integration with zSystems to provide high-performance graphics.
+Output Example: Heatmaps showing the correlation between food price indices and other features.
+
+![image_2024-10-20_122330298](https://github.com/user-attachments/assets/883173bd-be4d-4fc5-89d2-f1e273718039)
+
+![image](https://github.com/user-attachments/assets/141d213c-aa31-4435-92ed-793999d571cd)
+
+
+4. Feature Engineering
+Explanation: Feature engineering plays a key role in model performance. Here, we standardize the 'value' column to create a new feature, 'value_scaled', and introduce a binary variable indicating whether the data belongs to recent years (post-2020). These engineered features help improve model predictions.
+Watson AI Integration: Watson Studio enhances this step by providing additional computational power to quickly standardize and engineer features.
+Output Example: A dataset with new features like 'value_scaled' and 'is_recent'.
+5. Model Training and Comparison
+Explanation: Multiple machine learning models, including XGBoost, Logistic Regression, Random Forest, and SVM, are trained and compared. Each model's performance is evaluated using classification reports, confusion matrices, and cross-validation scores to ensure the most accurate model is chosen.
+IBM’s Snap ML: The Snap ML package, optimized for z/OS, accelerates the training process, allowing models like XGBoost to run faster and more efficiently on large datasets.
+Output Example: Comparison tables and reports showing the performance of various models.
+6. Hyperparameter Tuning
+Explanation: To further enhance the model, hyperparameter tuning is performed on the XGBoost model using a grid search. This ensures that the model is optimized for maximum accuracy in predicting disruptions.
+IBM Cloud Pak for Data: This step uses IBM’s Cloud Pak to streamline the tuning process, ensuring that all parameters are tested efficiently on the zSystems infrastructure.
+Output Example: The best model configuration and its accuracy score.
+7. Feature Importance Analysis
+Explanation: After the model is trained, we analyze the feature importance using XGBoost’s in-built functionality. This helps identify which variables are most influential in predicting disruptions, providing valuable insights into the factors affecting supply chain stability.
+Output Example: A feature importance graph showing the top features.
+8. Ensemble Learning
+Explanation: To further improve model performance, we implement an ensemble model that combines XGBoost, Logistic Regression, Random Forest, and SVM classifiers. This ensemble model increases prediction accuracy by leveraging the strengths of multiple algorithms.
+Sysplex Architecture: The ensemble model benefits from the Sysplex architecture, which provides the high availability and processing capacity required to handle multiple models simultaneously.
+Output Example: Ensemble model classification report and performance metrics.
+9. Final Evaluation
+Explanation: Finally, the best-performing model is evaluated on the test set. Classification reports, confusion matrices, and ROC curves are used to assess its performance, ensuring that the model is robust and reliable for predicting real-world supply chain disruptions.
+Output Example: Final classification reports, ROC curve, and confusion matrices for the best model.
+
+![image](https://github.com/user-attachments/assets/70f59350-8fcb-45c4-b803-2737fde40cde)
+
+Additional Sections for Repository:
+Challenges Faced: Include a section describing challenges such as data quality, model optimization, and integration with IBM’s zSystems, and how these were addressed.
+Learnings and Insights: Highlight both the technical and soft skills learned during the project, such as teamwork, problem-solving, and data modeling on a large scale.
+IBM zSystems and Linux One Platform Use:
+Platform Integration: Throughout the project, IBM zSystems played a critical role by ensuring data security, high availability, and scalability. The project leveraged the computational power of IBM’s zLinux One for data processing and training complex machine learning models.
+Packages Used:
+Watson Studio: For data import, cleaning, and model training.
+Snap ML: To accelerate the machine learning process, optimizing large datasets.
+DB2: For secure data storage and retrieval.
+Hyperledger Fabric: For blockchain integration, ensuring transparent and secure data tracking across the supply chain.
+
+![image_2024-10-20_122133114](https://github.com/user-attachments/assets/faed67c5-8cfc-475f-9d89-6b251b53d313)
+
+![image](https://github.com/user-attachments/assets/1447e036-68f2-4388-9058-941bf423b0cf)
+
 
 Wow Factors - 
 1) Innovative Feature Engineering: The project utilizes advanced feature engineering techniques, such as creating standardized values and binary indicators, to enhance model performance, demonstrating a deep understanding of the dataset.
